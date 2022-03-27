@@ -1,8 +1,40 @@
-const fetchPokemon = () => {
+var namesList;
+var pokeName;
+var indice = 0;
+const retrieveAllPokemons = () =>{
+    const url = 'https://pokeapi.co/api/v2/pokemon/?limit=1126';
+    fetch(url).then((res) => {
+        return res.json();
+    }).then((data) => {
+        namesList = data.results;
+    })
+}
+
+retrieveAllPokemons();
+
+const retievePokemon = () => {
     const pokeNameInput = document.getElementById("pokeName");
-    document.getElementById("")
-    let pokeName = pokeNameInput.value;
-    pokeName = pokeName.toLowerCase();
+    fetchPokemon(pokeNameInput.value);
+}
+
+
+const retievePokemonByList = (flag) => {
+    if (flag == 0){
+        if(indice>0){
+            indice--;
+        }
+    }
+    else{
+        if(indice<1126){
+            indice++;
+        }
+    }
+    let pokeN = namesList[indice].name;
+    fetchPokemon(pokeN);
+}
+
+const fetchPokemon = (name) => {
+    let pokeName = name.toLowerCase();
     const url = `https://pokeapi.co/api/v2/pokemon/${pokeName}`;
     fetch(url).then((res) => {
         if (res.status != "200") {
@@ -51,10 +83,9 @@ const pokeStatistics= (statistics) => {
 
 const pokeMoves= (moves) => {
     const pokeMoves = document.getElementById("moves");
-    movesList = [];
-    pokeMoves.value = moves;
+    var movesList = '';
     for ( let m in moves ) {
-        movesList.push(m + '.-' + moves[m].move.name + '<br>');
+        movesList += m + '.-' + moves[m].move.name + '<br>';
     }
     pokeMoves.innerHTML = movesList;
     console.log(movesList);

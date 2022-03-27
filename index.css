@@ -116,6 +116,18 @@ button{
     font-weight: 35px;
     font-family:Georgia, 'Times New Roman', Times, serif;
   }
+.previous-btn{
+  position: absolute;
+  top: 200px;
+  left:40px;
+  width: 50px;
+}
+.next-btn {
+  position: absolute;
+  top: 200px;
+  left: 110px;
+  width: 50px;
+}
 .div-get-name{
   position:absolute;
   left: 30px;

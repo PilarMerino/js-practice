@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex LaunchX</title>
+    <link rel="stylesheet" href="./index.css">
+    
+</head>
+<body>
+    <header>
+        <img class="img-logo" src="./img/Pokemon-Logo.png" alt="">
+    </header>
+    
+    <h1>Pokedex LaunchX</h1>
+    <div class="div-get-name">
+      <h3>Busca un Pokemon</h3>
+      <input type="text" class="input" placeholder="pokemon" id="pokeName" name="pokeName">
+      <button  onclick="fetchPokemon()"> <img class="img-button" src="./img/bag.png" alt=""></button>
+    </div>
+ 
+
+    <div class="div-poke-info">
+       <h3>Nombre:</h3><p class="p-small-text" id="name">-</p>
+        <h3>Tipo:</h3> <p  class="p-small-text" id="type">-</p>  
+    </div>
+    <div class="div-poke-st" id="metric_results">
+        <h2>Estadísticas</h2>
+        <table style="width:100%" id="table-st">
+            <tr>
+              <th>Name</th>
+              <th>Base Stat</th>
+              <th>Effort</th>
+            </tr>
+            <tbody id="tbody">
+                <tr>
+                     <td>hp</td>
+                     <td id="bs0">-</td>
+                     <td id="eff0">-</td>
+                </tr>
+                <tr>
+                     <td>attack</td>
+                     <td id="bs1">-</td>
+                     <td id="eff1">-</td>
+                </tr>
+               <tr>
+                 <td>defense</td>
+                 <td id="bs2">-</td>
+                 <td id="eff2">-</td>
+               </tr>
+              <tr>
+                 <td>special-attack</td>
+                 <td id="bs3">-</td>
+                 <td id="eff3">-</td>
+              </tr>
+               <tr>
+                 <td>special-defense</td>
+                 <td id="bs4">-</td>
+                 <td id="eff4">-</td>
+               </tr>
+               <tr>
+                 <td>speed</td>
+                 <td id="bs5">-</td>
+                 <td id="eff5">-</td>
+               </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+    <div class="div-moves">
+        <h2>Moviemientos</h2>
+        <p id="moves">-</p>
+    </div>
+ 
+
+    <div class="div-img-pokemon">
+        <img class="img-pokemon" src="./img/pokeball2.png" alt="Pokemon" id="pokeImg" width="150px">
+    </div>
+
+</body>
+<footer>
+    <script src="./index.js"></script>
+</footer>
+</html>
